@@ -1,0 +1,14 @@
+{
+  "name": "Bolo Khata — voice khaata for Indian shops",
+  "short_name": "Bolo Khata",
+  "description": "Speak your ledger: kiryana entries, receipts on Telegram, UPI payment links.",
+  "start_url": "/ledger",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0d0f",
+  "theme_color": "#0b0d0f",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

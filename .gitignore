@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.next/
+data/audio/*.wav
+data/noise/*.wav
+data/*.db
+.pytest_cache/
+.DS_Store

@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Noto covers Devanagari + Tamil body copy; display/ui/data fonts load in layout. */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Tamil:wght@400;600&display=swap");
+
+:root {
+  color-scheme: dark;
+
+  --bg: #0b0d0f;
+  --panel: #131518;
+  --panel-2: #17191d;
+  --line: #25282e;
+  --ink: #eceae5;
+  --muted: #98a0ab;
+  --faint: #5d626b;
+  --accent: #e4a853;
+  --accent-hi: #f0c583;
+  --ok: #8bbf9f;
+  --warn: #d9b36b;
+  --bad: #e08c7b;
+  --sky: #92b4c9;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-feature-settings: "cv05", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(228, 168, 83, 0.28);
+}
+
+/* fine dotted lab-grid backdrop (pure CSS, zero deps, very subtle) */
+.grid-paper {
+  background-image: radial-gradient(rgba(236, 234, 229, 0.045) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.hindi-tamil {
+  font-family: "Noto Sans Devanagari", "Noto Sans Tamil", "Noto Sans", system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+.card {
+  background-color: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 160ms ease, border-color 160ms ease,
+    color 160ms ease, transform 160ms ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #17130c;
+}
+.btn-primary:hover { background: var(--accent-hi); }
+.btn-primary:disabled { opacity: 0.4; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+.btn-ghost:hover { border-color: var(--faint); background: var(--panel-2); }
+.btn-ghost:disabled { opacity: 0.4; }
+
+.input {
+  width: 100%;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+  font-size: 13.5px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 140ms ease;
+}
+.input::placeholder { color: var(--faint); }
+.input:focus { border-color: var(--accent); }
+
+.input option { background: var(--panel-2); }
+
+.label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* status colors, semantic and muted */
+.st-ok { color: var(--ok); }
+.st-bad { color: var(--bad); }
+.st-warn { color: var(--warn); }
+.st-info { color: var(--sky); }
+
+/* recharts theming */
+.recharts-cartesian-axis-tick text { fill: var(--faint); font-size: 11px; }
+.recharts-default-tooltip {
+  background: var(--panel-2) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 10px !important;
+  color: var(--ink) !important;
+}
